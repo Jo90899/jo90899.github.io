@@ -1,0 +1,89 @@
+.create-event-body {
+    background: linear-gradient(90deg, rgb(20, 20, 20) 0%, rgb(62, 59, 78) 100%);
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    color: #fff;
+  }
+  
+  .create-event-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .create-event-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .create-event-subtitle {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .create-event-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+  }
+  
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  .form-textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  .error-message {
+    color: #ff6b6b;
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .event-link-container {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .event-link-container a {
+    color: #fff; /* Set the link color to white */
+    text-decoration: none; /* Optional: Remove underline */
+  }
+  
+  .event-link-container a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+  }
+  
+  .event-link {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    word-break: break-all;
+  }
+
