@@ -7,11 +7,12 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zZXBoLWFiZGVsbWFsZWsiLCJhIjoiY20wc2c3bGx4M
 const EventResults = ({ eventId }) => {
   const [eventDetails, setEventDetails] = useState(null);
   const [selectedParticipant, setSelectedParticipant] = useState(null);
+  const [selectedEvent, setSelectedEvent] = useState(null);
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(-70);
-  const [lat, setLat] = useState(40);
-  const [zoom, setZoom] = useState(3);
+  const [lng, setLng] = useState(-117);
+  const [lat, setLat] = useState(34);
+  const [zoom, setZoom] = useState(8);
 
   useEffect(() => {
     const fetchEventData = async () => {
@@ -85,9 +86,19 @@ const EventResults = ({ eventId }) => {
     if (type === 'participant') {
       marker.getElement().addEventListener('click', () => {
         setSelectedParticipant(prev => prev === participantData ? null : participantData);
+        setSelectedEvent(null);
         console.log("Everything", selectedParticipant)
       });
     }
+    else {
+      marker.getElement().addEventListener('click', () => {
+        setSelectedEvent(prev => prev === eventDetails ? null : eventDetails);
+        setSelectedParticipant(null); // Close participant sidebar when event is selected
+        console.log("Everything", eventDetails)
+
+      });
+    };
+
   };
 
   const getCoordinates = async (address) => {
@@ -115,8 +126,7 @@ return (
         {selectedParticipant && (
         <div className="sidebar">
           <h3>{selectedParticipant.name}</h3>
-          <p>Email: {selectedParticipant.phone}</p>
-          <p>Address: {selectedParticipant.address}</p>
+          <p>Phone Number: {selectedParticipant.phone}</p>
           <p>Has Car: {selectedParticipant.hasCar ? 'Yes' : 'No'}</p>
           {selectedParticipant.hasCar && (
             <>
@@ -126,14 +136,20 @@ return (
               )}
             </>
           )}
-          <button 
+          {/* <button 
             className="email-button" 
             onClick={() => handleEmailClick(selectedParticipant.email)}
           >
             Call
-          </button>
+          </button> */}
         </div>
-      )}
+        )}
+        {selectedEvent && (
+            <div className="sidebar event-sidebar">
+              <h1>{selectedEvent.eventTitle}</h1>
+              <p>Address: {selectedEvent.eventAddress}</p>
+            </div>
+          )}
       </div>
     </div>
 );
