@@ -9,7 +9,7 @@ const JoinEvent = ({ eventId, onJoinSuccess }) => {
   const [eventDetails, setEventDetails] = useState(null);
   const [userData, setUserData] = useState({
     name: '',
-    email: '',
+    phone: '',
     address: '',
     hasCar: false,
     canGiveRides: false,
@@ -103,16 +103,16 @@ const JoinEvent = ({ eventId, onJoinSuccess }) => {
             />
           </div>
           <div className='form-group'>
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="phone">Phone:</label>
             <input 
-                type="email"
-                id="email"
-                name="email"
-                value={userData.email} 
+                type="tel"
+                id="phone"
+                name="phone"
+                value={userData.phone} 
                 onChange={handleInputChange} 
                 required 
                 className='form-input'
-                placeholder="Enter your email"
+                placeholder="Enter your phone number"
               />
           </div>
           <div className='form-group'>

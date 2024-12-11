@@ -9,14 +9,14 @@ const CreateEvent = () => {
     eventAddress: '',
     eventDescription: '',
     mainUserName: '',
-    mainUserEmail: '',
+    mainUserPhone: '',
     mainUserAddress: ''
   });
 
   const [participateInEvent, setParticipateInEvent] = useState(false);
   const [userData, setUserData] = useState({
     name: '',
-    email: '',
+    phone: '',
     address: '',
     hasCar: false,
     canGiveRides: false,
@@ -146,12 +146,12 @@ const CreateEvent = () => {
                 />
               </div>
               <div className='form-group'>
-                <label htmlFor="email">Email:</label>
+                <label htmlFor="phone">Phone:</label>
                 <input 
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={userData.email} 
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={userData.phone} 
                   onChange={handleUserInputChange} 
                   required 
                   className='form-input'

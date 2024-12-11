@@ -6,7 +6,7 @@ import JoinEvent from './JoinEvent';
 import './Event.css'; 
 import '../App.css'; 
 
-const EventDetailsAndJoin = () => {
+const MyEvent = () => {
   const { eventId } = useParams();
   const [eventDetails, setEventDetails] = useState(null);
   const [error, setError] = useState('');
@@ -41,4 +41,4 @@ const EventDetailsAndJoin = () => {
   );
 };
 
-export default EventDetailsAndJoin;
+export default MyEvent;

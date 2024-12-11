@@ -85,6 +85,7 @@ const EventResults = ({ eventId }) => {
     if (type === 'participant') {
       marker.getElement().addEventListener('click', () => {
         setSelectedParticipant(prev => prev === participantData ? null : participantData);
+        console.log("Everything", selectedParticipant)
       });
     }
   };
@@ -114,7 +115,7 @@ return (
         {selectedParticipant && (
         <div className="sidebar">
           <h3>{selectedParticipant.name}</h3>
-          <p>Email: {selectedParticipant.email}</p>
+          <p>Email: {selectedParticipant.phone}</p>
           <p>Address: {selectedParticipant.address}</p>
           <p>Has Car: {selectedParticipant.hasCar ? 'Yes' : 'No'}</p>
           {selectedParticipant.hasCar && (
