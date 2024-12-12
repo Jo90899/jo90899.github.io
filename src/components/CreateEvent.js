@@ -51,12 +51,13 @@ const CreateEvent = () => {
     e.preventDefault();
   
     try {
-      const response = await fetch('http://5.78.125.190:5000/components/create-event', {
+      const response = await fetch('https://gather-maps.com/components/create-event', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(eventData),
+        credentials: 'include',
+        body: JSON.stringify(eventData)
       });
       if (!response.ok) {
         throw new Error('Failed to create event');
@@ -66,7 +67,7 @@ const CreateEvent = () => {
       
       // If main user is participating, join the event
       if (participateInEvent) {
-        const joinResponse = await fetch(`http://5.78.125.190:5000/join-event/${eventId}`, {
+        const joinResponse = await fetch(`https://gather-maps.com/join-event/${eventId}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(userData),

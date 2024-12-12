@@ -20,7 +20,7 @@ const JoinEvent = ({ eventId, onJoinSuccess }) => {
   useEffect(() => {
     const fetchEventDetails = async () => {
       try {
-        const response = await fetch(`http://5.78.125.190:5000/event/${eventId}`);
+        const response = await fetch(`https://gather-maps.com/event/${eventId}`);
         if (!response.ok) throw new Error('Failed to fetch event details');
         const data = await response.json();
         setEventDetails(data);
@@ -50,7 +50,7 @@ const JoinEvent = ({ eventId, onJoinSuccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://5.78.125.190:5000/join-event/${eventId}`, {
+      const response = await fetch(`https://gather-maps.com/join-event/${eventId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
