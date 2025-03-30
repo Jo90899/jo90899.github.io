@@ -51,7 +51,7 @@ const CreateEvent = () => {
     e.preventDefault();
   
     try {
-      const response = await fetch('https://gather-maps.com/components/create-event', {
+      const response = await fetch('https://gather-maps.com:5050/components/create-event', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ const CreateEvent = () => {
       
       // If main user is participating, join the event
       if (participateInEvent) {
-        const joinResponse = await fetch(`https://gather-maps.com/join-event/${eventId}`, {
+        const joinResponse = await fetch(`https://gather-maps.com:5050/join-event/${eventId}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(userData),

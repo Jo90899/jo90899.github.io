@@ -17,7 +17,7 @@ const EventResults = ({ eventId }) => {
   useEffect(() => {
     const fetchEventData = async () => {
       try {
-        const response = await fetch(`https://gather-maps.com/event/${eventId}`);
+        const response = await fetch(`https://gather-maps.com:5050/event/${eventId}`);
         if (!response.ok) throw new Error('Failed to fetch event data');
         const data = await response.json();
         setEventDetails(data);

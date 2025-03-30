@@ -1,7 +1,7 @@
 {
   "name": "hangout",
-  "homepage": "http://5.78.125.190/",
-  "proxy": "http://localhost:3000",
+  "homepage": "https://gather-maps.com",
+  "proxy": "https://localhost:3000",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
